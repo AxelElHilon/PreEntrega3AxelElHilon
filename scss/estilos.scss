@@ -1,4 +1,6 @@
 // Variables
+
+@use "variables";
 $primary-color: #000000;
 $secondary-color: #ffffff;
 $hover-scale: 1.1;
@@ -6,6 +8,7 @@ $transition-speed: 0.3s;
 $border-radius: 5px;
 
 // Estilos Generales
+@use "reset";
 * {
     margin: 0;
     padding: 0;
@@ -23,6 +26,7 @@ main {
 }
 
 // Estética de Header y Navigation
+@use "header";
 header {
     background-image: url(calle2.jpg);
     color: white;
@@ -36,8 +40,13 @@ header {
             list-style: none;
             gap: 15px;
             margin: 10px 0;
+    
+            @media (max-width: 768px) {
+                flex-direction: column;
+                align-items: center;
+            }
         }
-
+    
         a {
             color: $primary-color;
             text-decoration: none;
@@ -47,13 +56,19 @@ header {
             opacity: 0.6;
             padding: 8px 16px;
             transition: transform $transition-speed ease, opacity $transition-speed ease;
-
+    
             &:hover {
                 transform: scale($hover-scale);
                 opacity: 1;
             }
+    
+            @media (max-width: 768px) {
+                width: 100%; /* Botones más grandes para dispositivos móviles */
+                text-align: center;
+            }
         }
     }
+    
 
     h1 {
         img {
@@ -68,6 +83,7 @@ header {
 }
 
 // Estética de Productos
+@use "productos";
 .productos {
     text-align: center;
     padding: 20px;
@@ -189,3 +205,9 @@ footer {
         }
     }
 }
+
+@import 'variables';
+@import 'reset';
+@import 'header';
+@import 'productos';
+

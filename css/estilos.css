@@ -1,8 +1,8 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* border: 1px red solid; */
 }
 
 body {
@@ -13,8 +13,6 @@ body {
 
 main {
   background: radial-gradient(ellipse, white, rgb(119, 119, 119));
-  margin: 20px;
-  padding: 20px;
 }
 
 header {
@@ -30,6 +28,12 @@ header nav ul {
   gap: 15px;
   margin: 10px 0;
 }
+@media (max-width: 768px) {
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 header nav a {
   color: #000000;
   text-decoration: none;
@@ -43,6 +47,12 @@ header nav a {
 header nav a:hover {
   transform: scale(1.1);
   opacity: 1;
+}
+@media (max-width: 768px) {
+  header nav a {
+    width: 100%; /* Botones más grandes para dispositivos móviles */
+    text-align: center;
+  }
 }
 header h1 img {
   width: 100px;
@@ -158,11 +168,4 @@ footer {
   transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
-  .sobre-nosotros {
-      flex-direction: column;
-      text-align: center;
-  }
-}
-
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=estilos.css.map */
