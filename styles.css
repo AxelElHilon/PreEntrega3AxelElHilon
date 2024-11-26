@@ -18,17 +18,18 @@ main {
 }
 
 header {
-  background-image: url(calle2.jpg);
+  background-image: url(img/calle2.jpg);
   color: white;
   padding: 1rem 0;
   text-align: center;
 }
 header nav ul {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   list-style: none;
   gap: 15px;
   margin: 10px 0;
+  padding: 20px;
 }
 header nav a {
   color: #000000;

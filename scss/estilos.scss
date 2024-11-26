@@ -1,6 +1,6 @@
 // Variables
 
-@use "variables";
+@use "scss/variables";
 $primary-color: #000000;
 $secondary-color: #ffffff;
 $hover-scale: 1.1;
@@ -8,7 +8,7 @@ $transition-speed: 0.3s;
 $border-radius: 5px;
 
 // Estilos Generales
-@use "reset";
+@use "scss/reset";
 * {
     margin: 0;
     padding: 0;
@@ -26,7 +26,7 @@ main {
 }
 
 // Estética de Header y Navigation
-@use "header";
+@use "scss/header";
 header {
     background-image: url(calle2.jpg);
     color: white;
@@ -83,7 +83,7 @@ header {
 }
 
 // Estética de Productos
-@use "productos";
+@use "scss/productos";
 .productos {
     text-align: center;
     padding: 20px;
@@ -206,8 +206,5 @@ footer {
     }
 }
 
-@import 'variables';
-@import 'reset';
-@import 'header';
-@import 'productos';
+
 
