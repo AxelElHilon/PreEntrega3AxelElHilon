@@ -1,80 +1,88 @@
 /*Reset*/
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  border: 1px red solid;
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
+  background-color: rgb(128, 128, 128);
+  font-family: "Anton", sans-serif;
 }
 
-/*Logo*/
-h1 {
+/*Header*/
+header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(ellipse, rgb(128, 126, 126), black);
-  padding: 15px;
+  padding: 12px;
+  background-image: url(../img/calle2.jpg);
 }
-h1 img {
+header h1 img {
   width: 100px;
   height: auto;
-  transition: all 0.3s ease-in-out;
+  filter: drop-shadow(5px 5px 10px rgba(255, 254, 254, 0.8));
 }
-h1 img:hover {
-  transform: scale(1.1);
+header nav {
+  background: radial-gradient(ellipse, rgb(194, 193, 193), rgb(53, 53, 53));
 }
-
-/*Navegador*/
-nav {
-  background: radial-gradient(ellipse, rgb(128, 128, 128), black);
-  padding: 10px;
-}
-nav ul {
+header nav ul {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
 }
-nav ul li {
+header nav ul li {
   list-style-type: none;
   transition: all 0.3s ease-in-out;
-  background: radial-gradient(ellipse, rgb(98, 97, 97), black);
-  transition: all 0.7s ease;
-  opacity: 0.6;
 }
-nav ul li:hover {
-  transform: scale(2.2);
+header nav ul li:hover {
+  transform: scale(1.1);
 }
-nav ul li a {
+header nav ul li:active {
+  background-color: #605f5f;
+  border: 2px solid rgb(54, 54, 54);
+}
+header nav ul li a {
   text-decoration: none;
-  color: white;
-  border: 1px solid black;
-  border-radius: 3px;
+  color: black;
+  text-shadow: 8px 2px 5px rgba(0, 0, 0, 0.6);
 }
 
+/*Icono*/
 .cart-icon {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  color: white;
-  padding: 10px;
-  border: 20%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
   font-size: 25px;
-  transition: background-color 0.4s ease, transform 0.3s ease;
-}
-.cart-icon a {
-  text-decoration: none;
-  color: white;
-}
-.cart-icon i {
-  font-size: 25px;
+  transition: all 0.3s ease-in-out;
+  filter: drop-shadow(5px 5px 2px rgba(0, 0, 0, 0.4));
 }
 .cart-icon:hover {
-  background-color: #444;
+  transform: scale(1.1);
+}
+.cart-icon a i {
+  color: rgb(255, 254, 254);
+  border: 5px solid white;
+  padding: 8px;
+  border-radius: 20px;
+}
+
+/*Main*/
+main .product-img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+main .product-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1) rotate(3deg);
+  filter: brightness(1.5);
 }
 
 /*# sourceMappingURL=estilos.css.map */
