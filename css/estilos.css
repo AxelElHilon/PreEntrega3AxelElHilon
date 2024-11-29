@@ -1,9 +1,9 @@
-@charset "UTF-8";
 /*Reset*/
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 * {
   padding: 0;
   margin: 0;
+  border: 1px red solid;
 }
 
 body {
@@ -101,8 +101,8 @@ main .grid .price {
   color: black;
 }
 main .grid .buy-btn {
-  justify-self: center; /* Centra el botón horizontalmente */
-  align-self: center; /* Centra el botón verticalmente */
+  justify-self: center;
+  align-self: center;
   display: flex;
   justify-content: center;
   align-items: center;

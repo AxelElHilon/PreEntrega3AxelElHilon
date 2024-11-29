@@ -7,7 +7,7 @@ $color-secundario: rgb(128, 128, 128);
 *{
     padding: 0;
     margin: 0;
-    //border: 1px red solid;
+    border: 1px red solid;
 }
 
 body{
@@ -123,8 +123,8 @@ main{
         }	
 
         .buy-btn {
-            justify-self: center; /* Centra el botón horizontalmente */
-            align-self: center;   /* Centra el botón verticalmente */
+            justify-self: center; 
+            align-self: center;   
             display: flex;
             justify-content: center;
             align-items: center;
