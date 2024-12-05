@@ -1,0 +1,273 @@
+@use "header";
+@use "main";
+@use "footer";
+
+
+
+$color-principal: black;
+$color-secundario: white;
+
+
+/*Reset*/
+*{
+    padding: 0;
+    margin: 0;
+    //border: 1px red solid;
+}
+
+body{
+    background-color: $color-secundario;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+/* Banner Section */
+.banner {
+  position: relative;
+  width: 100%; /* Full width */
+  height: 400px; /* Set a fixed height for the banner */
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(255, 253, 253, 0.5)); /* Initial gradient background */
+  background-size: 200% 200%; /* This is important for the animation */
+  animation: gradientAnimation 10s ease infinite; /* Animation for the moving gradient */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Hide overflow */
+}
+
+@keyframes gradientAnimation {
+  0% {
+      background-position: 0% 50%; /* Start position */
+  }
+  100% {
+      background-position: 100% 50%; /* End position */
+  }
+}
+
+.banner-text {
+  color: white;
+  text-align: center;
+  padding: 20px;
+  animation: fadeIn 1.5s ease-in-out; /* Animation for the text */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Shadow effect for the text */
+  font-family: Arial, sans-serif; /* Ensure a clean font */
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.banner-text h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  animation: textSlide 1s ease-in-out, flicker 1s infinite; /* Animation for the heading with flicker */
+}
+
+@keyframes textSlide {
+  from {
+      transform: translateY(-30px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes flicker {
+  0%, 20%, 40%, 60%, 80%, 100% {
+      opacity: 1;
+  }
+  10%, 30%, 50%, 70%, 90% {
+      opacity: 0.5; /* Flicker effect */
+  }
+}
+
+.banner-text p {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  animation: flicker 1s infinite; /* Flicker effect for the paragraph as well */
+}
+
+.btn {
+  background-color: #686767; /* Button color */
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #201f1f; /* Darker shade on hover */
+}
+/*Sobre Nosotros*/
+
+.imagen-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas para las imágenes */
+    gap: 20px;
+    width: 100%;
+    padding: 20px 0;
+    
+    .image-container {
+      position: relative; /* Permite que el texto se posicione sobre la imagen */
+      overflow: hidden; /* Para que el texto no se salga de la imagen */
+      
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease-in-out;
+        border-radius: 10px;
+      }
+  
+      .text-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: rgb(252, 252, 252);
+        font-size: 1.5em;
+        font-weight: bold;
+        text-align: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease, visibility 0.5s ease; /* Animación suave para el texto */
+        z-index: 10;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), -2px -2px 4px rgba(0, 0, 0, 0.7);
+      }
+  
+      &:hover {
+        img {
+          transform: scale(1.05); /* Aumenta ligeramente la imagen al pasar el cursor */
+        }
+  
+        .text-overlay {
+          opacity: 1;
+          visibility: visible; /* Hace visible el texto cuando el cursor está sobre la imagen */
+        }
+      }
+    }
+  }
+  
+  /* Animación en la carga para que el texto aparezca suavemente */
+  @keyframes fadeInText {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Diseño responsive para dispositivos móviles */
+  @media (max-width: 768px) {
+    .imagen-grid {
+      grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+  }
+
+/*form*/
+.formulario {
+    width: 35%;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo opaco */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeIn 1s forwards; /* Animación para el fade-in */
+  
+    h3 {
+      font-size: 1.6em;
+      color: #333;
+      margin-bottom: 20px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  
+    label {
+      display: block;
+      font-size: 1.1em;
+      margin-bottom: 8px;
+      color: #555;
+    }
+  
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 1em;
+      transition: all 0.3s ease;
+  
+      &:focus {
+        border-color: #333;
+        outline: none;
+        box-shadow: 0 0 5px rgba(51, 51, 51, 0.5);
+      }
+  
+      &:hover {
+        transform: scale(1.02); /* Le da un pequeño efecto de aumento al hacer hover */
+      }
+    }
+  
+    textarea {
+      height: 120px;
+      resize: vertical;
+    }
+  
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #555;
+        transform: translateY(-2px); /* Efecto de levantar el botón */
+      }
+    }
+  }
+  
+  /* Animación para la aparición del formulario */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Diseño responsive para dispositivos móviles */
+  @media (max-width: 768px) {
+    main {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .imagen-grid {
+      width: 100%;
+    }
+  
+    .formulario {
+      width: 90%;
+      margin-top: 20px;
+    }
+  }
